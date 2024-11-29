@@ -78,7 +78,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 7%; /* distance from borders % */
+  padding: 1.875rem 7%; /* distance from borders % */
   grid-area: n;
 }
 
@@ -88,10 +88,10 @@ header {
 
 .navlinks li {
   display: inline-block;
-  padding: 5px 20px;
-  margin-right: 20px;
+  padding: 0.3rem 1.25rem;
+  margin-right: 1.25rem;
   background-color: var(--text-color);
-  border-radius: 4px;
+  border-radius: 0.25rem;
 }
 
 .navlinks li a {
@@ -104,10 +104,10 @@ header {
 
 /* navbar button */
 header button {
-  padding: 9px 25px;
+  padding: 0.5rem 1.5rem;
   background-color: var(--text-color);
   border: none;
-  border-radius: 50px;
+  border-radius: 3.125rem;
   cursor: pointer;
   transition: all 0.3s ease 0s;
 }
@@ -140,8 +140,8 @@ header button:hover {
 .introduction-werkplek img {
   object-fit: cover; /* cover = maintain original aspect ratio (fill container without distorting the img) */
   border-radius: 50%;
-  width: 175px;
-  height: 175px;
+  width: 11rem;
+  height: 11rem;
 }
 
 .introduction .icons {
@@ -212,8 +212,8 @@ header button:hover {
 
 .boek img,
 .game img {
-  max-height: 400px;
-  border-radius: 4px;
+  max-height: 25rem;
+  border-radius: 0.25rem;
 }
 /* about boek-game */
 
@@ -229,7 +229,7 @@ header button:hover {
 .project2 img,
 .project3 img,
 .project4 img {
-  max-height: 300px;
+  max-height: 18.75rem;
   max-width: 20vw;
 }
 
@@ -299,8 +299,8 @@ header button:hover {
   grid-area: c;
   margin: auto;
   background-color: var(--background-color);
-  padding: 50px;
-  border-radius: 10px;
+  padding: 3rem;
+  border-radius: 0.6rem;
 }
 
 .contact-form .contacttitle {
@@ -317,19 +317,19 @@ header button:hover {
 .contact-form input[type="text"],
 textarea {
   width: 100%;
-  padding: 12px;
+  padding: 0.75rem;
   border: none;
-  border-radius: 4px;
-  margin-top: 6px;
-  margin-bottom: 16px;
+  border-radius: 0.25rem;
+  margin-top: 0.4rem;
+  margin-bottom: 1rem;
 }
 
 .contact-form input[type="submit"] {
   background-color: var(--extra-color);
   color: var(--background-color);
-  padding: 12px 20px;
+  padding: 0.75rem 1.25rem;
   border: none;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   cursor: pointer;
   transition: all 0.3s ease 0s;
 }
@@ -342,22 +342,22 @@ textarea {
 /* continue-back */
 .verder {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 1.25rem;
+  right: 1.25rem;
 }
 
 .terug {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
+  bottom: 1.25rem;
+  left: 1.25rem;
 }
 
 .verder button,
 .terug button {
-  padding: 9px 25px;
+  padding: 0.5rem 1.5rem;
   background-color: var(--extra-color);
   border: none;
-  border-radius: 50px;
+  border-radius: 3.125rem;
   cursor: pointer;
   transition: all 0.3s ease 0s;
 }
