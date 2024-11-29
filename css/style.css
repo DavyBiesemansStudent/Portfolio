@@ -1,0 +1,371 @@
+:root {
+  --primary-color: #f2ea77;
+  --secondary-color: #9ca653;
+  --text-color: #d9d9d9;
+  --extra-color: #e2f266;
+  --background-color: #212426;
+}
+
+/* TODO: 
+-check of alle imgs goed zijn voor web (jpg) 
+-alle downloadable files en images checken (zijn de correcte files op de correcte plaats)
+-uploaden van alles (wireframes, prototypes, moodboards etc...)
+*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  font-family: "Lexend", sans-serif;
+  background: linear-gradient(90deg, var(--background-color), #212426de);
+  min-height: 100vh;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 10vh 90vh;
+  grid-template-areas:
+    "n n n n n n"
+    "a a a a a a";
+  /* a = intro, n = nav */
+}
+
+/* about grid */
+body.about {
+  grid-template-areas:
+    "n n n n n n"
+    "a a a a a a"
+    ". b b g g .";
+  /* a = intro, n = nav, b = boek, g = game */
+}
+
+body.projects {
+  grid-template-rows: 10vh 5vh 50vh;
+  grid-template-areas:
+    "n n n n n n"
+    "t t t t t t"
+    "a a a b b b"
+    "c c c d d d";
+  /* a = proj1.. */
+}
+
+body.contact {
+  grid-template-areas:
+    "n n n n n n"
+    ". c c c c .";
+}
+
+.curpage {
+  color: var(--secondary-color);
+}
+
+/* header */
+header li,
+header a,
+button {
+  font-size: 1.2rem;
+  color: var(--background-color);
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 7%; /* distance from borders % */
+  grid-area: n;
+}
+
+.navlinks {
+  list-style: none;
+}
+
+.navlinks li {
+  display: inline-block;
+  padding: 5px 20px;
+  margin-right: 20px;
+  background-color: var(--text-color);
+  border-radius: 4px;
+}
+
+.navlinks li a {
+  transition: all 0.3s ease 0s;
+}
+
+.navlinks li a:hover {
+  color: var(--secondary-color);
+}
+
+/* navbar button */
+header button {
+  padding: 9px 25px;
+  background-color: var(--text-color);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+header button:hover {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+/* header */
+
+/* introduction */
+.introduction {
+  margin: auto;
+  text-align: center;
+  color: var(--text-color);
+  grid-area: a;
+}
+
+.introduction h1 {
+  font-size: 5rem;
+  color: var(--primary-color);
+}
+
+.introduction p {
+  font-size: 3rem;
+}
+
+.introduction img,
+.introduction-about img,
+.introduction-werkplek img {
+  object-fit: cover; /* cover = maintain original aspect ratio (fill container without distorting the img) */
+  border-radius: 50%;
+  width: 175px;
+  height: 175px;
+}
+
+.introduction .icons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.introduction .icons .fa {
+  color: var(--secondary-color);
+  margin-top: 0.5rem;
+  font-size: 2.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+}
+
+.introduction .icons .fa:hover {
+  color: var(--primary-color);
+}
+/* introduction */
+
+/* introduction about*/
+.introduction-about {
+  margin: auto;
+  max-width: 50%;
+  text-align: center;
+  color: var(--text-color);
+  grid-area: a;
+}
+
+.introduction-about h1 {
+  font-size: 5rem;
+  color: var(--primary-color);
+}
+
+.introduction-about p {
+  font-size: 1.5rem;
+}
+
+.introduction-about .highlight,
+.introduction-about .highlight a {
+  color: var(--extra-color);
+}
+
+/* introduction about*/
+
+/* about boek-game */
+.boek,
+.game {
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+.boek h2,
+.game h2 {
+  color: var(--text-color);
+  text-align: center;
+}
+
+.boek {
+  grid-area: b;
+}
+
+.game {
+  grid-area: g;
+}
+
+.boek img,
+.game img {
+  max-height: 400px;
+  border-radius: 4px;
+}
+/* about boek-game */
+
+/* projecten */
+.projectentitel {
+  grid-area: t;
+  margin: auto;
+  color: var(--primary-color);
+  font-size: 4rem;
+}
+
+.project1 img,
+.project2 img,
+.project3 img,
+.project4 img {
+  max-height: 300px;
+  max-width: 20vw;
+}
+
+.project1,
+.project2,
+.project3,
+.project4 {
+  width: 40vw;
+  height: 15vw;
+  /* vaste height en width voor uitlijning */
+  display: flex;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 5rem;
+}
+
+.project1 p,
+.project2 p,
+.project3 p,
+.project4 p {
+  font-size: 1rem;
+  margin-left: 1rem;
+  color: var(--text-color);
+}
+
+.project1 a,
+.project2 a,
+.project3 a,
+.project4 a {
+  color: var(--secondary-color);
+  font-style: italic;
+  text-decoration: none;
+}
+
+.project1 {
+  grid-area: a;
+}
+.project2 {
+  grid-area: b;
+}
+.project3 {
+  grid-area: c;
+}
+.project4 {
+  grid-area: d;
+}
+/* projecten */
+
+/* werkplekleren */
+.introduction-werkplek {
+  margin: auto;
+  max-width: 50%;
+  text-align: center;
+  color: var(--text-color);
+  grid-area: a;
+}
+
+.introduction-werkplek h1 {
+  font-size: 5rem;
+  color: var(--primary-color);
+}
+
+/* werkplekleren */
+
+/* contact */
+.contact-form {
+  grid-area: c;
+  margin: auto;
+  background-color: var(--background-color);
+  padding: 50px;
+  border-radius: 10px;
+}
+
+.contact-form .contacttitle {
+  display: flex;
+  justify-content: center;
+  color: var(--primary-color);
+  font-size: 2.5rem;
+}
+
+.contact-form label {
+  color: var(--text-color);
+}
+
+.contact-form input[type="text"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+.contact-form input[type="submit"] {
+  background-color: var(--extra-color);
+  color: var(--background-color);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.contact-form input[type="submit"]:hover {
+  background-color: var(--primary-color);
+}
+/* contact */
+
+/* continue-back */
+.verder {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.terug {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+.verder button,
+.terug button {
+  padding: 9px 25px;
+  background-color: var(--extra-color);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.verder button:hover,
+.terug button:hover {
+  color: var(--background-color);
+  background-color: var(--text-color);
+  transition: all 0.3s ease 0s;
+}
+/* continue-back */
