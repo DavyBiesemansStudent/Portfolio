@@ -354,7 +354,7 @@ textarea {
 .verder button,
 .terug button {
   padding: 0.5rem 1.5rem;
-  background-color: var(--extra-color);
+  background-color: var(--text-color);
   border: none;
   border-radius: 3.125rem;
   cursor: pointer;
@@ -363,8 +363,7 @@ textarea {
 
 .verder button:hover,
 .terug button:hover {
-  color: var(--background-color);
-  background-color: var(--text-color);
+  background-color: var(--extra-color);
   transition: all 0.3s ease 0s;
 }
 /* continue-back */
