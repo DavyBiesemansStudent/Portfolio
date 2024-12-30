@@ -6,6 +6,8 @@
   --background-color: #212426;
 }
 
+/* website: https://biesemansdavyweb.be/ */
+
 html {
   scroll-behavior: smooth;
 }
@@ -174,12 +176,14 @@ header .cv-btn:hover {
 }
 
 .introduction h1 {
-  font-size: 5em;
+  font-size: 3em;
+  width: 100%;
+  height: 100%;
   color: var(--primary-color);
 }
 
 .introduction p {
-  font-size: 3em;
+  font-size: 2em;
 }
 
 .introduction img,
@@ -221,7 +225,7 @@ header .cv-btn:hover {
 }
 
 .introduction-about h1 {
-  font-size: 5em;
+  font-size: 3em;
   color: var(--primary-color);
 }
 
@@ -249,7 +253,7 @@ header .cv-btn:hover {
   grid-area: t;
   margin: auto;
   color: var(--primary-color);
-  font-size: 4em;
+  font-size: 2.5em;
   margin-bottom: 0.75em;
 }
 
@@ -379,7 +383,7 @@ body.projectapart{
 }
 
 .introduction-werkplek h1 {
-  font-size: 4em;
+  font-size: 3em;
   color: var(--primary-color);
 }
 
@@ -484,6 +488,10 @@ textarea {
 @media screen and (min-width: 1000px) {
   body {
     max-width: 1150px;
+  }
+
+  .introduction h1, .introduction-about h1, .introduction-werkplek h1, .projectentitel{
+    font-size: 4em;
   }
 
   body.about {
