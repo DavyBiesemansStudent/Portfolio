@@ -9,30 +9,36 @@
   </head>
   <body class="contact">
     <header>
-        <nav>
-            <ul class="navlinks">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">Over mij</a></li>
-              <li><a href="projecten.html">Projecten</a></li>
-              <li><a href="werkplek.html">Werkplekleren</a></li>
-              <li><a href="contact.html"><span class="curpage">Contact</span></a></li>
-            </ul>
-          </nav>
-      <a class="cv" href="cv/cv.pdf"><button>CV download</button></a>
+      <nav>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+    
+        <ul class="navlinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Over mij</a></li>
+          <li><a href="projecten.html">Projecten</a></li>
+          <li><a href="werkplek.html">Werkplekleren</a></li>
+          <li><a href="contact.html"><span class="curpage">Contact</span></a></li>
+        </ul>
+      </nav>
+      <a class="cv" href="cv/cv.pdf"><button class="cv-btn">CV download</button></a>
     </header>
     <section class="contact-form">
       <h1 class="contacttitle">Contact</h1>
-      <form action="#">
+      <form action="mailform.php" method="POST">
 
-        <label for="fname">Voornaam</label>
-        <input type="text" id="fname" name="Voornaam" placeholder="Voornaam">
+        <label for="name">Naam:</label>
+        <input type="text" id="fname" name="Voornaam">
     
-        <label for="lname">Familienaam</label>
-        <input type="text" id="lname" name="Familienaam" placeholder="Familienaam">
+        <label for="email">E-mail:</label><br>
+        <input type="email" id="email" name="email" required><br>
     
-    
-        <label for="Onderwerp">Onderwerp</label>
-        <textarea id="subject" name="Onderwerp" placeholder="Onderwerp" style="height:200px"></textarea>
+        <label for="message">Onderwerp:</label>
+        <textarea id="message" name="Onderwerp" style="height:200px" required></textarea>
     
         <input type="submit" value="Versturen">
     

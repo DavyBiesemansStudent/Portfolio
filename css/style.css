@@ -6,12 +6,6 @@
   --background-color: #212426;
 }
 
-/* TODO: 
--check of alle imgs goed zijn voor web (jpg) 
--alle downloadable files en images checken (zijn de correcte files op de correcte plaats)
--uploaden van alles (wireframes, prototypes, moodboards etc...)
-*/
-
 html {
   scroll-behavior: smooth;
 }
@@ -26,8 +20,9 @@ body {
   display: grid;
   font-family: "Lexend", sans-serif;
   background: linear-gradient(90deg, var(--background-color), #212426de);
-  min-height: 100vh;
-  gap: 1rem;
+  max-width: 550px;
+  margin: 0 auto;
+  gap: 1em;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 10vh 90vh;
   grid-template-areas:
@@ -40,18 +35,18 @@ body {
 body.about {
   grid-template-areas:
     "n n n n n n"
-    "a a a a a a"
-    ". b b g g .";
-  /* a = intro, n = nav, b = boek, g = game */
+    "a a a a a a";
 }
 
 body.projects {
-  grid-template-rows: 10vh 5vh 50vh;
+  grid-template-rows: 10vh;
   grid-template-areas:
     "n n n n n n"
     "t t t t t t"
-    "a a a b b b"
-    "c c c d d d";
+    "a a a a a a"
+    "b b b b b b"
+    "c c c c c c"
+    "d d d d d d";
   /* a = proj1.. */
 }
 
@@ -69,7 +64,7 @@ body.contact {
 header li,
 header a,
 button {
-  font-size: 1.2rem;
+  font-size: 1.1em;
   color: var(--background-color);
   text-decoration: none;
 }
@@ -77,7 +72,6 @@ button {
 header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 1.875rem 7%; /* distance from borders % */
   grid-area: n;
 }
@@ -87,11 +81,10 @@ header {
 }
 
 .navlinks li {
-  display: inline-block;
-  padding: 0.3rem 1.25rem;
-  margin-right: 1.25rem;
+  padding: 0.3em 1.25em;
+  margin-right: 1.25em;
   background-color: var(--text-color);
-  border-radius: 0.25rem;
+  border-radius: 0.25em;
 }
 
 .navlinks li a {
@@ -103,18 +96,73 @@ header {
 }
 
 /* navbar button */
-header button {
+header .cv-btn {
   border: none;
-  padding: 0.3rem 1.25rem;
+  padding: 0.3em 1.25em;
   background-color: var(--text-color);
-  border-radius: 0.25rem;
+  border-radius: 0.25em;
   cursor: pointer;
   transition: all 0.3s ease 0s;
 }
 
-header button:hover {
+header .cv-btn:hover {
   color: var(--secondary-color);
 }
+
+.navlinks {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 10;
+  left: 0;
+  background-color: var(--background-color);
+  padding: 1em;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it appears above other content */
+  width: 16em;
+}
+
+.navlinks li {
+  display: block;
+  margin: 1em 0;
+  text-align: center;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-toggle:checked ~ .navlinks {
+  display: flex; /* Show menu when checkbox is checked */
+}
+
+.hamburger {
+  display: flex; /* Show the hamburger icon */
+  cursor: pointer;
+  flex-direction: column;
+  gap: 0.25em;
+  padding: 0.5em;
+}
+
+.hamburger span {
+  display: block;
+  width: 1.5em;
+  height: 0.2em;
+  background-color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+/* Animate hamburger icon when active */
+.menu-toggle:checked + .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle:checked + .hamburger span:nth-child(2) {
+  opacity: 0; /* Hide the middle line */
+}
+.menu-toggle:checked + .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
 /* header */
 
 /* introduction */
@@ -126,12 +174,12 @@ header button:hover {
 }
 
 .introduction h1 {
-  font-size: 5rem;
+  font-size: 5em;
   color: var(--primary-color);
 }
 
 .introduction p {
-  font-size: 3rem;
+  font-size: 3em;
 }
 
 .introduction img,
@@ -139,8 +187,8 @@ header button:hover {
 .introduction-werkplek img {
   object-fit: cover; /* cover = maintain original aspect ratio (fill container without distorting the img) */
   border-radius: 50%;
-  width: 11rem;
-  height: 11rem;
+  width: 11em;
+  height: 11em;
 }
 
 .introduction .icons {
@@ -151,8 +199,8 @@ header button:hover {
 
 .introduction .icons .fa {
   color: var(--secondary-color);
-  margin-top: 0.5rem;
-  font-size: 2.5rem;
+  margin-top: 0.5em;
+  font-size: 2.5em;
   text-align: center;
   text-decoration: none;
   transition: all 0.3s ease 0s;
@@ -166,23 +214,24 @@ header button:hover {
 /* introduction about*/
 .introduction-about {
   margin: auto;
-  max-width: 50%;
+  max-width: 75%;
   text-align: center;
   color: var(--text-color);
   grid-area: a;
 }
 
 .introduction-about h1 {
-  font-size: 5rem;
+  font-size: 5em;
   color: var(--primary-color);
 }
 
 .introduction-about p {
-  font-size: 1.5rem;
+  font-size: 1.5em;
+  margin-bottom: 1em;
 }
 
-.introduction-about .highlight,
-.introduction-about .highlight a {
+.highlight,
+.highlight a {
   color: var(--extra-color);
 }
 
@@ -191,28 +240,7 @@ header button:hover {
 /* about boek-game */
 .boek,
 .game {
-  margin: auto;
-  margin-bottom: 1rem;
-}
-
-.boek h2,
-.game h2 {
-  color: var(--text-color);
-  text-align: center;
-}
-
-.boek {
-  grid-area: b;
-}
-
-.game {
-  grid-area: g;
-}
-
-.boek img,
-.game img {
-  max-height: 25rem;
-  border-radius: 0.25rem;
+  display: none;
 }
 /* about boek-game */
 
@@ -221,36 +249,40 @@ header button:hover {
   grid-area: t;
   margin: auto;
   color: var(--primary-color);
-  font-size: 4rem;
+  font-size: 4em;
+  margin-bottom: 0.75em;
 }
 
 .project1 img,
 .project2 img,
 .project3 img,
 .project4 img {
-  max-height: 18.75rem;
-  max-width: 20vw;
+  object-fit: cover;
+  height: 10em;
+  width: 10em;
 }
 
 .project1,
 .project2,
 .project3,
 .project4 {
-  width: 40vw;
-  height: 15vw;
   /* vaste height en width voor uitlijning */
   display: flex;
   align-items: center;
-  margin: auto;
-  margin-bottom: 5rem;
+  background-color: #212426de;
+  margin: 1em 2em;
+  padding: 1em;
+  border: solid 1px var(--extra-color);
+  border-radius: 1rem;
 }
 
 .project1 p,
 .project2 p,
 .project3 p,
 .project4 p {
-  font-size: 1rem;
-  margin-left: 1rem;
+  font-size: 1em;
+  margin-bottom: 0.75em;
+  margin-left: 1em;
   color: var(--text-color);
 }
 
@@ -277,6 +309,66 @@ header button:hover {
 }
 /* projecten */
 
+/* projecten apart */
+body.projectapart{
+  grid-template-rows: 10vh;
+  grid-template-areas:
+    "n n n n n n"
+    "t t t t t t"
+    ". p p p p ."
+    ". h h h h ."
+    ". l l l l ."
+    ". i i i i .";
+}
+
+.projectlongtext{
+  grid-area: p;
+}
+
+.learned{
+  grid-area: h;
+  color: var(--secondary-color);
+}
+.projectlearntext{
+  grid-area: l;
+}
+
+.projectlongtext, .projectlearntext{
+  font-size: 1.2em;
+  color: var(--text-color);
+}
+
+.projectimgbig{
+  display: flex;
+  flex-direction: column-reverse;
+  grid-area: i;
+  margin-bottom: 2em;
+}
+
+.projectimgbig img{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.projectimgbig figcaption{
+  margin-bottom: 0.3em;
+}
+
+.projectimgbig a{
+  color: var(--secondary-color);
+  font-style: italic;
+  text-decoration: underline;
+  font-size: 1.2em;
+  transition: all 0.3s ease 0s;
+}
+
+.projectimgbig a:hover{
+  color: var(--primary-color);
+}
+
+/* projecten apart */
+
 /* werkplekleren */
 .introduction-werkplek {
   margin: auto;
@@ -287,7 +379,7 @@ header button:hover {
 }
 
 .introduction-werkplek h1 {
-  font-size: 5rem;
+  font-size: 4em;
   color: var(--primary-color);
 }
 
@@ -298,15 +390,15 @@ header button:hover {
   grid-area: c;
   margin: auto;
   background-color: var(--background-color);
-  padding: 3rem;
-  border-radius: 0.6rem;
+  padding: 3em;
+  border-radius: 0.6em;
 }
 
 .contact-form .contacttitle {
   display: flex;
   justify-content: center;
   color: var(--primary-color);
-  font-size: 2.5rem;
+  font-size: 2.5em;
 }
 
 .contact-form label {
@@ -314,21 +406,22 @@ header button:hover {
 }
 
 .contact-form input[type="text"],
+.contact-form input[type="email"],
 textarea {
   width: 100%;
-  padding: 0.75rem;
+  padding: 0.75em;
   border: none;
-  border-radius: 0.25rem;
-  margin-top: 0.4rem;
-  margin-bottom: 1rem;
+  border-radius: 0.25em;
+  margin-top: 0.4em;
+  margin-bottom: 1em;
 }
 
 .contact-form input[type="submit"] {
   background-color: var(--extra-color);
   color: var(--background-color);
-  padding: 0.75rem 1.25rem;
+  padding: 0.75em 1.25em;
   border: none;
-  border-radius: 0.25rem;
+  border-radius: 0.25em;
   cursor: pointer;
   transition: all 0.3s ease 0s;
 }
@@ -339,31 +432,146 @@ textarea {
 /* contact */
 
 /* continue-back */
-.verder {
-  position: fixed;
-  bottom: 1.25rem;
-  right: 1.25rem;
-}
-
+.verder,
 .terug {
-  position: fixed;
-  bottom: 1.25rem;
-  left: 1.25rem;
-}
-
-.verder button,
-.terug button {
-  padding: 0.5rem 1.5rem;
-  background-color: var(--text-color);
-  border: none;
-  border-radius: 3.125rem;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-}
-
-.verder button:hover,
-.terug button:hover {
-  background-color: var(--extra-color);
-  transition: all 0.3s ease 0s;
+  display: none;
 }
 /* continue-back */
+
+@media screen and (min-width: 620px) {
+  body {
+    max-width: 900px;
+  }
+
+  .contact-form{
+    margin: 3em 1em;
+  }
+
+  .verder,
+  .terug {
+    display: block;
+  }
+
+  .verder {
+    position: fixed;
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .terug {
+    position: fixed;
+    bottom: 1.25rem;
+    left: 1.25rem;
+  }
+
+  .verder button,
+  .terug button {
+    padding: 0.5rem 1.5rem;
+    background-color: var(--text-color);
+    border: none;
+    border-radius: 3.125rem;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+  }
+
+  .verder button:hover,
+  .terug button:hover {
+    background-color: var(--extra-color);
+    transition: all 0.3s ease 0s;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    max-width: 1150px;
+  }
+
+  body.about {
+    grid-template-areas:
+      "n n n n n n"
+      "a a a a a a"
+      ". b b g g .";
+    /* a = intro, n = nav, b = boek, g = game */
+  }
+  .boek,
+  .game {
+    display: grid;
+    margin: auto;
+    margin-bottom: 1rem;
+  }
+
+  .boek h2,
+  .game h2 {
+    color: var(--text-color);
+    text-align: center;
+  }
+
+  .boek {
+    grid-area: b;
+  }
+
+  .game {
+    grid-area: g;
+  }
+
+  .boek img,
+  .game img {
+    max-height: 25rem;
+    border-radius: 0.25rem;
+  }
+
+  .project1,
+  .project2,
+  .project3,
+  .project4 {
+    display: flex;
+    align-items: center;
+    margin: 1em 7em;
+  }
+
+  .project1 img,
+  .project2 img,
+  .project3 img,
+  .project4 img {
+    height: 15em;
+    width: 15em;
+  }
+
+  .project1 p,
+  .project2 p,
+  .project3 p,
+  .project4 p {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    max-width: 1400px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .navlinks {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    top: 0;
+  }
+
+  .navlinks li {
+    margin-top: 1.35em;
+    min-width: 10em;
+    margin-left: 1.25em;
+  }
+
+  header {
+    padding: 0;
+  }
+
+  header .cv-btn{
+    margin-top: 1.35em;
+  }
+}
