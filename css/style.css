@@ -62,110 +62,95 @@ body.contact {
   color: var(--secondary-color);
 }
 
-/* header */
-header li,
-header a,
-button {
-  font-size: 1.1em;
-  color: var(--background-color);
-  text-decoration: none;
-}
-
-header {
+/* nav */
+nav{
+  grid-area: n;
+  height: 3.5em;
   display: flex;
   justify-content: space-between;
-  padding: 1.875rem 7%; /* distance from borders % */
-  grid-area: n;
+  align-items: center;
 }
 
-.navlinks {
-  list-style: none;
+.links-container{
+  height: 80%;
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.navlinks li {
-  padding: 0.3em 1.25em;
-  margin-right: 1.25em;
+nav a{
+  height: 90%;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  text-align: none;
+  text-decoration: none;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  color: var(--background-color);
   background-color: var(--text-color);
-  border-radius: 0.25em;
 }
 
-.navlinks li a {
-  transition: all 0.3s ease 0s;
-}
-
-.navlinks li a:hover {
+nav a:hover{
   color: var(--secondary-color);
 }
 
-/* navbar button */
-header .cv-btn {
-  border: none;
-  padding: 0.3em 1.25em;
-  background-color: var(--text-color);
-  border-radius: 0.25em;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
+nav .cv-link{
+  margin-left: auto;
 }
 
-header .cv-btn:hover {
-  color: var(--secondary-color);
+nav svg{
+  fill: var(--text-color);
 }
-
-.navlinks {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 10;
-  left: 0;
-  background-color: var(--background-color);
-  padding: 1em;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000; /* Ensure it appears above other content */
-  width: 16em;
-}
-
-.navlinks li {
-  display: block;
-  margin: 1em 0;
-  text-align: center;
-}
-
-.menu-toggle {
+#sidebar-active{
   display: none;
 }
 
-.menu-toggle:checked ~ .navlinks {
-  display: flex; /* Show menu when checkbox is checked */
+.open-sidebar-button, .closed-sidebar-button{
+  display: none;
 }
 
-.hamburger {
-  display: flex; /* Show the hamburger icon */
-  cursor: pointer;
-  flex-direction: column;
-  gap: 0.25em;
-  padding: 0.5em;
-}
+@media(max-width: 700px){
+  .links-container{
+      flex-direction: column;
+      align-items: flex-start;
+      position: fixed;
+      top: 0;
+      left: -100%;
+      /* z-index zodat het altijd boven de rest staat */
+      z-index: 10;
+      width: 12.5rem;
+      height: auto;
+      background-color: var(--background-color);
+      box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+      transition: 0.5s ease-out;
+  }
 
-.hamburger span {
-  display: block;
-  width: 1.5em;
-  height: 0.2em;
-  background-color: var(--text-color);
-  transition: all 0.3s ease;
-}
+  nav a{
+      box-sizing: border-box;
+      height: auto;
+      width: 90%;
+      padding: 20px 30px;
+      justify-content: flex-start;
+  }
 
-/* Animate hamburger icon when active */
-.menu-toggle:checked + .hamburger span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.menu-toggle:checked + .hamburger span:nth-child(2) {
-  opacity: 0; /* Hide the middle line */
-}
-.menu-toggle:checked + .hamburger span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
 
-/* header */
+  .open-sidebar-button, .closed-sidebar-button{
+      padding: 20px;
+      display: block;
+  }
+
+  /* checked = boolean, ~ = sibling selector */
+  /* if checked dan doe je dit in links-container */
+  #sidebar-active:checked ~ .links-container{
+      /* verplaatsen van sidebar van -100% naar 0 */
+      left: 0;
+  }
+}
+/* nav */
 
 /* introduction */
 .introduction {
@@ -420,6 +405,10 @@ textarea {
   margin-bottom: 1em;
 }
 
+textarea{
+  height: 20em;
+}
+
 .contact-form input[type="submit"] {
   background-color: var(--extra-color);
   color: var(--background-color);
@@ -450,7 +439,7 @@ textarea {
   .contact-form{
     margin: 3em 1em;
   }
-
+  
   .verder,
   .terug {
     display: block;
@@ -476,6 +465,7 @@ textarea {
     border-radius: 3.125rem;
     cursor: pointer;
     transition: all 0.3s ease 0s;
+    font-size: 1.1em;
   }
 
   .verder button:hover,
@@ -558,28 +548,7 @@ textarea {
     max-width: 1400px;
   }
 
-  .hamburger {
-    display: none;
-  }
-
-  .navlinks {
-    display: flex;
-    flex-direction: row;
-    padding: 0;
-    top: 0;
-  }
-
-  .navlinks li {
-    margin-top: 1.35em;
-    min-width: 10em;
-    margin-left: 1.25em;
-  }
-
-  header {
-    padding: 0;
-  }
-
-  header .cv-btn{
-    margin-top: 1.35em;
+  textarea{
+    height: 22em;
   }
 }
