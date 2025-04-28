@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Projecten</title>
+</head>
+
+<body class="projectapart">
+    <nav>
+        <input type="checkbox" id="sidebar-active">
+        <label for="sidebar-active" class="open-sidebar-button">
+            <!--svg code van menu.svg (open dan copy menu.svg inhoud)-->
+            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>        </label>
+  
+        <div class="links-container">
+            <label for="sidebar-active" class="closed-sidebar-button">
+              <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>            </label>
+  
+            <a href="../index.html">Home</a>
+            <a href="../about.html">Over mij</a>
+            <a href="../projecten.html"><span class="curpage">Projecten</span></a>
+            <a href="../werkplek.html">Werkplekleren</a>
+            <a href="../contact.html">Contact</a>
+            <a class="cv-link" href="../cv/cv.pdf">CV</a>
+        </div>
+    </nav>
+
+    <h1 class="projectentitel">Social Media Project</h1>
+
+    <p class="projectlongtext">
+        Voor dit project ontwikkelde ik een <span class="highlight">social media webapplicatie</span> waarin gebruikers berichten kunnen aanmaken en verwijderen.
+        De applicatie is gebouwd met <span class="highlight">Spring Boot</span> en <span class="highlight">Thymeleaf</span>, met een <span class="highlight">H2-database</span> voor het opslaan van gegevens.
+        <br><br>
+        Tijdens het bouwen leerde ik werken volgens het <span class="highlight">Model-View-Controller (MVC)</span>-principe: 
+        waarbij de data (Model), de gebruikersinterface (View) en de logica (Controller) duidelijk van elkaar gescheiden zijn. 
+        <br><br>
+        Dankzij <span class="highlight">Thymeleaf</span> kon ik dynamische webpagina’s ontwikkelen die communiceren met de backend.
+    </p>
+    
+    <h1 class="learned">Wat ik leerde</h1>
+    <p class="projectlearntext">
+        Het correct toepassen van de <span class="highlight">Model-View-Controller-structuur</span> en het belang van een duidelijke scheiding tussen data, logica en presentatie.
+        <br><br>
+        Het opzetten van een eenvoudige maar functionele <span class="highlight">database-integratie</span> en het bouwen van <span class="highlight">CRUD-functionaliteit</span> binnen een webomgeving.
+        Ook heb ik geleerd hoe belangrijk een <span class="highlight">gebruiksvriendelijke interface</span> is om de interactie voor de eindgebruiker zo soepel mogelijk te maken.
+    </p>
+    
+    
+    <figure class="projectimgbig"><img src="../img/socialmedia-project.png" alt="GIP site foto">
+        <figcaption><a href="https://github.com/DavyBiesemansStudent/SocialMediaProject">Github</a><p></p><a href="../DownloadableFiles/Davy-SocialMedia.zip">Download</a></figcaption>
+    </figure>
+
+    <aside class="terug">
+        <a class="back" href="project2.html"><button>Ga terug</button></a>
+    </aside>
+</body>
+
+</html>
